@@ -516,7 +516,25 @@
       }
     }
     
+  
+    /* Strict In-Page Card Modal Isolation - NEVER overflows footer */
+    #cardModal {
+      display: none !important;
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 999999 !important;
+    }
+    #cardModal.active-modal {
+      display: flex !important;
+    }
+
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-[#F2E2DE] selection:text-[#292527]">
 
@@ -5441,25 +5459,29 @@
   
 
 
-  <!-- In-Page Luxury Business Card Modal (Stays inside website) -->
-  <div id="cardModal" class="fixed inset-0 z-[10000] hidden items-center justify-center bg-black/75 backdrop-blur-md p-3 sm:p-6 overflow-y-auto" onclick="if(event.target===this) window.closeCardModal()">
-    <div class="relative w-full max-w-[860px] my-auto animate-fadeIn">
+  <!-- In-Page Luxury Business Card Modal (Strict Isolation - Never Leaks Below Footer) -->
+  <div id="cardModal" style="display: none !important; position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; width: 100vw !important; height: 100vh !important; z-index: 999999 !important;" class="items-center justify-center bg-black/80 backdrop-blur-md p-3 sm:p-6 overflow-y-auto" onclick="if(event.target===this) window.closeCardModal()">
+    <div class="relative w-full max-w-[880px] my-auto">
       
       <!-- Modal Controls Bar: ONLY "Скачать" button and Close button -->
       <div class="flex items-center justify-between pb-3 text-white px-1">
-        <a href="./card.jpg" download="01-LUXNAIL_business_card.jpg" class="px-5 py-2 rounded-full bg-white text-[#8F5552] hover:bg-[#F8EDE9] font-bold text-xs sm:text-sm shadow-lg transition flex items-center gap-2">
+
+        <a href="./card.jpg" download="01-LUXNAIL_business_card.jpg" class="px-5 py-2.5 rounded-full bg-white text-[#8F5552] hover:bg-[#F8EDE9] font-bold text-xs sm:text-sm shadow-xl transition flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
           <span>Скачать</span>
         </a>
+
         <button type="button" onclick="window.closeCardModal()" class="w-9 h-9 rounded-full bg-white/20 hover:bg-white/40 text-white flex items-center justify-center text-lg font-bold backdrop-blur-sm transition border border-white/20" title="Закрыть (Esc)">
           ✕
         </button>
       </div>
 
-      <!-- The Real Luxury Card Image -->
+      <!-- The Card Component -->
+
       <div class="rounded-[28px] sm:rounded-[38px] overflow-hidden shadow-2xl border-2 border-[#C4A27C]/80 bg-[#FAF4F0]">
         <img src="./card.jpg" alt="Визитка LUXNAIL" class="w-full h-auto block select-none" />
       </div>
+
     </div>
   </div>
 
@@ -5467,16 +5489,16 @@
     window.openCardModal = function() {
       var m = document.getElementById('cardModal');
       if (m) {
-        m.classList.remove('hidden');
-        m.classList.add('flex');
+        m.style.setProperty('display', 'flex', 'important');
+        m.classList.add('active-modal');
         document.body.style.overflow = 'hidden';
       }
     };
     window.closeCardModal = function() {
       var m = document.getElementById('cardModal');
       if (m) {
-        m.classList.add('hidden');
-        m.classList.remove('flex');
+        m.style.setProperty('display', 'none', 'important');
+        m.classList.remove('active-modal');
         document.body.style.overflow = '';
       }
     };
@@ -5485,6 +5507,7 @@
         window.closeCardModal();
       }
     });
+
   </script>
   <!-- End In-Page Modal -->
 

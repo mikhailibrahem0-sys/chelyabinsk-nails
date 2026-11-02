@@ -467,43 +467,52 @@
   <!-- Sticky Site Header (Unified with Studio Badge, Trilingual Switcher & Config Controls Centered) -->
   
   <!-- Unified Single-Row Header (Pure Russian, Brand Left, Navigation Center, Booking CTA Right) -->
+    <!-- Unified Header & Quick Navigation Sub-Bar (Exact Match to Reference UI) -->
   <header id="site-header" class="sticky top-0 z-40 bg-[#FAF7F5]/95 backdrop-blur-md border-b border-[#EAD8D2]/70 transition-all duration-200">
-    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 h-[74px] flex items-center justify-between gap-4">
-      
+    <!-- Top Row: Brand & Booking CTA -->
+    <div class="max-w-[1360px] mx-auto px-4 sm:px-6 lg:px-8 h-[66px] flex items-center justify-between gap-4">
       <!-- Brand Left -->
       <a href="#/" onclick="window.navigateTo('/')" class="group flex flex-col items-start focus:outline-none shrink-0">
         <span class="font-script text-[28px] lg:text-[32px] leading-none text-[#8F5B58] group-hover:text-[#AA706F] transition" id="header-brand-name">ПОЛЮБВИ</span>
-        <span class="text-[9px] tracking-[0.2em] uppercase text-[#8A7975] font-medium -mt-0.5 px-0.5">СТУДИЯ МАНИКЮРА</span>
+        <span class="text-[9px] tracking-[0.2em] uppercase text-[#8A7975] font-medium -mt-0.5 px-0.5">АТМОСФЕРНАЯ СТУДИЯ МАНИКЮРА</span>
       </a>
 
-      <!-- Center Unified Nav Pills -->
-      <nav aria-label="Main Navigation" class="hidden xl:flex items-center gap-1.5 text-xs text-[#292527] bg-[#F7EFEA]/90 border border-[#DEC3BC]/80 px-3 py-1.5 rounded-full shadow-xs mx-auto">
-        <button type="button" onclick="window.navigateTo('/')" class="screen-pill px-3 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-home">Главная</button>
-        <button type="button" onclick="window.navigateTo('/about')" class="screen-pill px-3 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-about">О мастере</button>
-        <button type="button" onclick="window.navigateTo('/services')" class="screen-pill px-3 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-services">Услуги</button>
-        <button type="button" onclick="window.navigateTo('/prices')" class="screen-pill px-3 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-prices">Цены</button>
-        <button type="button" onclick="window.navigateTo('/portfolio')" class="screen-pill px-3 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-portfolio">Портфолио</button>
-        <button type="button" onclick="window.navigateTo('/booking')" class="screen-pill px-3 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-booking">Онлайн-запись</button>
-        <button type="button" onclick="window.navigateTo('/reviews')" class="screen-pill px-3 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-reviews">Отзывы</button>
-        <button type="button" onclick="window.navigateTo('/safety-faq')" class="screen-pill px-3 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-safety">Стерильность</button>
-        <button type="button" onclick="window.navigateTo('/contacts')" class="screen-pill px-3 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-contacts">Контакты</button>
-        <a href="./card.html" target="_blank" class="px-3.5 py-1 rounded-full font-semibold transition bg-[#FFFDFC] text-[#966461] border border-[#DEC3BC] hover:bg-[#F8EDE9] inline-flex items-center gap-1.5 shadow-xs">
-          <span>📇</span>
-          <span>Визитка & QR</span>
-        </a>
-      </nav>
-
-      <!-- Right CTA & Mobile Hamburger -->
+      <!-- Right CTA -->
       <div class="flex items-center gap-2.5 shrink-0">
-        <button type="button" onclick="window.navigateTo('/booking')" class="btn-rose px-5 h-[42px] text-xs sm:text-[13px] font-medium inline-flex items-center gap-1.5 shadow-sm">
+        <button type="button" onclick="window.navigateTo('/booking')" class="btn-rose px-5 h-[40px] text-xs sm:text-[13px] font-medium inline-flex items-center gap-1.5 shadow-sm">
           <span id="header-book-cta">Записаться онлайн</span>
-          <span>→</span>
-        </button>
-        <button type="button" onclick="window.toggleMobileMenu()" aria-label="Open Menu" id="mobile-menu-btn" class="xl:hidden w-10 h-10 rounded-xl bg-[#F4E6E2] text-[#292527] inline-flex items-center justify-center border border-[#DEC3BC]">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <span class="arrow-move">→</span>
         </button>
       </div>
+    </div>
 
+    <!-- Bottom Row: Quick Navigation Sub-bar (Разделы сайта - точно как на скриншоте) -->
+    <div class="bg-[#F7F0EC]/95 border-t border-[#EAD8D2]/60 py-2 px-4 overflow-x-auto shadow-xs">
+      <div class="max-w-[1360px] mx-auto flex items-center gap-1.5 text-[11.5px] whitespace-nowrap" id="screen-switcher-bar">
+        <span class="text-[#978D88] font-semibold mr-1 shrink-0" id="quick-nav-label">Разделы сайта:</span>
+        <button type="button" onclick="window.navigateTo('/')" data-pill-route="/" class="screen-pill px-2.5 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-home">Главная</button>
+        <button type="button" onclick="window.navigateTo('/about')" data-pill-route="/about" class="screen-pill px-2.5 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-about">О мастере</button>
+        <button type="button" onclick="window.navigateTo('/services')" data-pill-route="/services" class="screen-pill px-2.5 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-services">Услуги</button>
+        <button type="button" onclick="window.navigateTo('/prices')" data-pill-route="/prices" class="screen-pill px-2.5 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-prices">Прайс-лист</button>
+        <button type="button" onclick="window.navigateTo('/portfolio')" data-pill-route="/portfolio" class="screen-pill px-2.5 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-portfolio">Портфолио</button>
+        <button type="button" onclick="window.navigateTo('/booking')" data-pill-route="/booking" class="screen-pill px-2.5 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-booking">Онлайн-запись</button>
+        <button type="button" onclick="window.navigateTo('/reviews')" data-pill-route="/reviews" class="screen-pill px-2.5 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-reviews">Отзывы клиентов</button>
+        <button type="button" onclick="window.navigateTo('/safety-faq')" data-pill-route="/safety-faq" class="screen-pill px-2.5 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-safety">Гигиена и FAQ</button>
+        <button type="button" onclick="window.navigateTo('/blog')" data-pill-route="/blog" class="screen-pill px-2.5 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-blog">Блог об уходе</button>
+        <button type="button" onclick="window.navigateTo('/contacts')" data-pill-route="/contacts" class="screen-pill px-2.5 py-1 rounded-full font-medium transition hover:bg-[#F2E2DE]" id="pill-contacts">Адрес и контакты</button>
+        
+        <!-- Printable QR Card Pill Button -->
+        <a href="./card.html" target="_blank" class="px-3 py-1 rounded-full font-semibold transition bg-[#FFFDFC] text-[#966461] border border-[#DEC3BC] hover:bg-[#F8EDE9] inline-flex items-center gap-1.5 shadow-xs ml-1 shrink-0">
+          <svg class="w-3.5 h-3.5 text-[#B87D79]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+          Визитка & QR-код
+        </a>
+
+        <!-- Canva Direct Edit Pill Button -->
+        <a href="https://www.canva.com/d/lYw2UQuKfDiLdjS" target="_blank" class="px-3 py-1 rounded-full font-semibold transition bg-[#00C4CC]/10 text-[#008287] border border-[#00C4CC]/30 hover:bg-[#00C4CC]/20 inline-flex items-center gap-1.5 shadow-xs shrink-0">
+          <svg class="w-3.5 h-3.5 text-[#00C4CC]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+          Открыть в Canva
+        </a>
+      </div>
     </div>
   </header>
 
@@ -616,12 +625,12 @@
     window.siteConfig = {
       lang: 'ru',
       brandName: "ПОЛЮБВИ",
-      masterNameAr: "Полина",
-      masterNameRu: "Полина",
-      masterNameEn: "Полина",
+      masterNameAr: "Полина Любимова",
+      masterNameRu: "Полина Любимова",
+      masterNameEn: "Полина Любимова",
       phone: "+7 (912) 308-33-24",
       whatsappNumber: "79123083324",
-      telegramHandle: "@polubvi_74",
+      telegramHandle: "@polubvi_nails",
       instagramHandle: "@polubvi_74",
       vkUrl: "https://vk.com/po_lubvi_studio_manicure",
       email: 'booking@06-polubvi-studio.ru',
@@ -632,13 +641,13 @@
       streetAddressRu: "ул. Братьев Кашириных, 112, стр. 2, 2 этаж",
       streetAddressEn: "ул. Братьев Кашириных, 112, стр. 2, 2 этаж",
       shortAddressAr: "ул. Братьев Кашириных, 112, Калининский район",
-      shortAddressRu: "ул. Братьев Кашириных, 112, Калининский район",
+      shortAddressRu: "ул. Братьев Кашириных, 112, С/З",
       shortAddressEn: "ул. Братьев Кашириных, 112, Калининский район",
       metroNoteAr: "Рядом с ЧелГУ и сквером • Удобный выезд на ул. Братьев Кашириных",
-      metroNoteRu: "Рядом с ЧелГУ и сквером • Удобный выезд на ул. Братьев Кашириных",
+      metroNoteRu: "24-й микрорайон • Остановка «Университет ЧелГУ»",
       metroNoteEn: "Рядом с ЧелГУ и сквером • Удобный выезд на ул. Братьев Кашириных",
       openingHoursAr: "Ежедневно с 09:00 до 20:00",
-      openingHoursRu: "Ежедневно с 09:00 до 20:00",
+      openingHoursRu: "Ежедневно с 09:00 до 21:00",
       openingHoursEn: "Ежедневно с 09:00 до 20:00",
       currencyAr: '₽',
       currencyRu: '₽',
@@ -650,7 +659,7 @@
 
     // Load saved settings from localStorage safely
     try {
-      var savedCfg = localStorage.getItem('nailbelle_client_config_v3');
+      var savedCfg = localStorage.getItem('06-Polubvi-Studio_config_v5');
       if (savedCfg) {
         var parsedCfg = JSON.parse(savedCfg);
         Object.assign(window.siteConfig, parsedCfg);
@@ -688,7 +697,7 @@
       "Blog": "Блог",
       "Book": "Запись",
       "Contacts": "Контакты",
-      "NAILBELLE GALLERY": "ГАЛЕРЕЯ NAILBELLE",
+      "ПОЛЮБВИ GALLERY": "ГАЛЕРЕЯ ПОЛЮБВИ",
       "Studio Work": "Работа студии",
       "Official Studio Channel: ": "Официальный канал студии: ",
       "Our concierge is delighted to answer your questions, help match shades, and confirm appointments daily from 10:00 AM to 9:00 PM.": "Мы с радостью ответим на ваши вопросы, поможем подобрать оттенок и подтвердим запись ежедневно с 10:00 до 21:00.",
@@ -716,7 +725,7 @@
       "BOUTIQUE DETAILS": "ДЕТАЛИ СТУДИИ",
       "Fresh floral arrangements and calming aromatherapy in every corner.": "Свежие цветочные композиции и тонкий расслабляющий аромат в каждом уголке.",
       "Your Personal Sanctuary": "Пространство вашей красоты и отдыха",
-      "NAILBELLE STUDIO": "СТУДИЯ NAILBELLE",
+      "ПОЛЮБВИ STUDIO": "СТУДИЯ ПОЛЮБВИ",
       "Unhurried one-on-one appointments away from crowded salon noise.": "Индивидуальный приём без спешки и шума переполненных салонов.",
       "Master Diploma: Manicure & Nail Architecture": "Диплом мастера: Маникюр и архитектура ногтей",
       "ACCREDITED CERTIFICATION": "МЕЖДУНАРОДНЫЙ ДИПЛОМ",
@@ -1067,7 +1076,7 @@
       "Complimentary dedicated guest parking is available right in front of Boutique Plaza.": "Бесплатная выделенная парковка для гостий студии прямо у главного входа в Boutique Plaza.",
       "Building Access:": "Вход в здание:",
       "Main lobby of Boutique Plaza, 3rd Floor, Suite 304.": "Главный холл Boutique Plaza, 3-й этаж, студия 304.",
-      "WE ALWAYS LOOK FORWARD TO WELCOMING YOU": "МЫ ВСЕГДА РАДЫ ВИДЕТЬ ВАС В СТУДИИ NAILBELLE",
+      "WE ALWAYS LOOK FORWARD TO WELCOMING YOU": "МЫ ВСЕГДА РАДЫ ВИДЕТЬ ВАС В СТУДИИ ПОЛЮБВИ",
       "Location & Contacts": "Адрес и контакты",
       "Get in touch your preferred way": "Свяжитесь с нами удобным для вас способом",
       "We await you ♡": "Ждём вас с любовью ♡",
@@ -1190,13 +1199,11 @@
       }
       return enStr;
     };
-    window.t = function(arText, enText, ruText) {
-      if (window.siteConfig.lang === 'ar') return arText;
-      if (window.siteConfig.lang === 'ru') {
-        if (ruText !== undefined && ruText !== null) return ruText;
-        return window.translateDynamicRu(enText);
-      }
-      return enText;
+        window.t = function(arText, enText, ruText) {
+      if (ruText !== undefined && ruText !== null) return ruText;
+      if (window.RU_DICT && window.RU_DICT[enText]) return window.RU_DICT[enText];
+      if (window.translateDynamicRu) return window.translateDynamicRu(enText);
+      return enText || ruText || 'ПОЛЮБВИ';
     };
     window.dirArrow = function() {
       return window.isAr() ? '←' : '→';
@@ -1206,7 +1213,7 @@
     };
     window.getMasterName = function() {
       if (window.isAr()) return window.siteConfig.masterNameAr;
-      if (window.isRu()) return window.siteConfig.masterNameRu || 'Лаян Аль-Мансур';
+      if (window.isRu()) return window.siteConfig.masterNameRu || 'Полина Любимова';
       return window.siteConfig.masterNameEn;
     };
     window.getDisplayPhone = function() {
@@ -1214,7 +1221,7 @@
     };
     window.getDisplayAddress = function() {
       if (window.isAr()) return window.siteConfig.cityAr + ' — ' + window.siteConfig.streetAddressAr;
-      if (window.isRu()) return (window.siteConfig.cityRu || 'Дубай') + ' — ' + (window.siteConfig.streetAddressRu || window.siteConfig.streetAddressEn);
+      return 'г. Челябинск — ' + (window.siteConfig.streetAddressRu || 'ул. Братьев Кашириных, 112, стр. 2, 2 этаж');
       return window.siteConfig.streetAddressEn + ', ' + window.siteConfig.cityEn;
     };
     window.getDisplayShortAddress = function() {
@@ -1757,7 +1764,7 @@
     window.REVIEWS = [
       {
         id: 'rev-1',
-        nameAr: 'سارة المنصوري',
+        nameAr: 'Анна Смирнова',
         nameRu: 'Екатерина Смирнова',
         nameEn: 'Sarah Al-Mansoori',
         dateAr: '١٢ أكتوبر ٢٠٢٦',
@@ -1771,7 +1778,7 @@
         categories: ['manicure', 'master', 'studio', 'photos'],
         avatar: window.ASSETS.avatar1,
         textAr: 'ليان، شكراً من القلب على أرقى مانيكير! الدقة في تنظيف الجلد وترتيب شكل الأظافر خيالية. الاستوديو هادئ ومريح جداً والقهوة لذيذة، أصبحت وجهتي الثابتة دائماً.',
-        textRu: 'Лаян, спасибо за такой безупречный маникюр! Всё выполнено невероятно аккуратно, тонко и с душой. В студии очень уютно, спокойная атмосфера и вкусный кофе. Теперь только к вам!',
+        textRu: 'Полина, спасибо за такой безупречный маникюр! Всё выполнено невероятно аккуратно, тонко и с душой. В студии очень уютно, спокойная атмосфера и вкусный кофе. Теперь только к вам!',
         textEn: 'Layan, thank you for the most impeccable manicure! Every detail from cuticle work to nail architecture is perfection. The studio is serene, spotless, and welcoming — my forever go-to place.',
         photos: [window.ASSETS.srvExpress, window.ASSETS.srvClassic, window.ASSETS.srvGel]
       },
@@ -1831,7 +1838,7 @@
         categories: ['master', 'studio', 'photos'],
         avatar: window.ASSETS.avatar4,
         textAr: 'استوديو مشرق وأنيق يبعث على الراحة النفسية! أحب اهتمام ليان الشخصي وكيف تختار لي دائماً درجة النيود المثالية التي تناسب لون بشرتي. أخرج من كل موعد وأنا في قمة السعادة!',
-        textRu: 'Прекрасный мастер и невероятно красивая светлая студия! Очень нравится индивидуальный подход и то, как Лаян всегда помогает подобрать идеальный оттенок нюда под тон кожи. Каждый раз выхожу счастливой!',
+        textRu: 'Прекрасный мастер и невероятно красивая светлая студия! Очень нравится индивидуальный подход и то, как Полина всегда помогает подобрать идеальный оттенок нюда под тон кожи. Каждый раз выхожу счастливой!',
         textEn: 'Such a bright, refined private studio! I love the personalized consultation and how Layan custom-matches the exact sheer nude shade to my skin tone. I leave happy every single visit!',
         photos: [window.ASSETS.heroNudeGold, window.ASSETS.portWhiteFloral, window.ASSETS.colNudeShimmer]
       }
@@ -2155,7 +2162,7 @@
       }
       window.siteConfig.lang = langCode;
       try {
-        localStorage.setItem('nailbelle_client_config_v3', JSON.stringify(window.siteConfig));
+        localStorage.setItem('06-Polubvi-Studio_config_v5', JSON.stringify(window.siteConfig));
       } catch (e) {}
       window.syncGlobalChrome();
       window.renderCurrentRoute();
@@ -2204,7 +2211,7 @@
       var badgeText = document.getElementById('mode-badge-text');
       if (badgeText) {
         badgeText.textContent = window.t(
-          'استوديو خاص معتمد • تعقيم طبي ١٠٠٪',
+          'Сертифицированная студия • 100% медицинская стерилизация',
           'Certified Private Studio • 100% Medical Sterilization',
           'Сертифицированная студия • 100% мед. стерилизация'
         );
@@ -2215,7 +2222,7 @@
       }
       var cfgBtn = document.getElementById('studio-config-btn');
       if (cfgBtn) {
-        cfgBtn.textContent = window.t('✦ بيانات الصالون والعملة', '✦ Studio Info & Currency', '✦ Данные салона и валюта');
+        cfgBtn.textContent = window.t('✦ Данные студии и валюта', '✦ Studio Info & Currency', '✦ Данные салона и валюта');
       }
 
       // Trilingual Switcher Pill Buttons (AR / EN)
@@ -2246,8 +2253,8 @@
         'nav-more-label': window.t('المزيد', 'More'),
         'nav-safety-label': window.t('التعقيم والأسئلة الشائعة', 'Sterilization & FAQ'),
         'nav-blog-label': window.t('المدونة ونصائح العناية', 'Care Journal & Blog'),
-        'header-book-cta': window.t('احجزي موعدك الآن', 'Book Appointment'),
-        'quick-nav-label': window.t('أقسام الموقع:', 'Quick Explore:'),
+        'header-book-cta': window.t('Записаться онлайн', 'Book Appointment'),
+        'quick-nav-label': window.t('Разделы сайта:', 'Quick Explore:'),
         'pill-home': window.t('الرئيسية', 'Home'),
         'pill-about': window.t('عن الخبيرة', 'About Master'),
         'pill-services': window.t('الخدمات', 'Services'),
@@ -2258,7 +2265,7 @@
         'pill-safety': window.t('التعقيم والأسئلة', 'Hygiene & FAQ'),
         'pill-blog': window.t('مدونة العناية', 'Care Journal'),
         'pill-contacts': window.t('الموقع والتواصل', 'Location & Contact'),
-        'mobile-book-cta': window.t('احجزي موعدك الآن ' + window.dirArrow(), 'Book Online ' + window.dirArrow()),
+        'mobile-book-cta': window.t('Записаться онлайн ' + window.dirArrow(), 'Book Online ' + window.dirArrow()),
         'mobile-contact-note': window.getDisplayHours(),
         'lightbox-book-btn': window.t('احجزي هذا التصميم ' + window.dirArrow(), 'Book This Style ' + window.dirArrow()),
         'footer-copy-text': window.t('استوديو خاص للعناية بالأظافر. الجمال يكمن في التفاصيل.', 'Private Nail Care Boutique. Beauty in Every Detail.'),
@@ -2391,7 +2398,7 @@
       var lb = window.appState.lightbox;
       if (!lb.items || !lb.items.length) return;
       var item = lb.items[lb.index];
-      document.getElementById('lightbox-category').textContent = item.category || window.t('معرض ПОЛЮБВИ', 'NAILBELLE GALLERY');
+      document.getElementById('lightbox-category').textContent = item.category || window.t('معرض ПОЛЮБВИ', 'ПОЛЮБВИ GALLERY');
       document.getElementById('lightbox-title').textContent = item.title || window.t('تصميم من أعمالنا', 'Studio Work');
       document.getElementById('lightbox-desc').textContent = item.desc || '';
       var img = document.getElementById('lightbox-img');
@@ -2545,7 +2552,7 @@
       var titleEl = document.getElementById('info-modal-title');
       var bodyEl = document.getElementById('info-modal-body');
       var modal = document.getElementById('info-modal');
-      titleEl.textContent = window.t('بيانات الصالون والعميل', 'Studio Profile & Customization');
+      titleEl.textContent = window.t('Информация о студии и бронирование', 'Studio Profile & Customization');
       bodyEl.innerHTML =
         '<p class="text-xs text-[#706B69]">' + window.t(
           'يمكنكِ تخصيص اسم الصالون، اسم الخبيرة، رقم الهاتف، العنوان، والعملة لتنعكس فوراً في جميع صفحات الموقع بالعربية والإنجليزية.',
@@ -2620,7 +2627,7 @@
         else window.siteConfig.openingHoursEn = hr;
       }
       try {
-        localStorage.setItem('nailbelle_client_config_v3', JSON.stringify(window.siteConfig));
+        localStorage.setItem('06-Polubvi-Studio_config_v5', JSON.stringify(window.siteConfig));
       } catch (err) {}
       window.closeInfoModal();
       window.syncGlobalChrome();
@@ -2676,7 +2683,7 @@
           serviceId: 'classic-manicure'
         },
         {
-          title: window.t('تشكيلة ألوان الجل والعناية', 'Curated Gel Palette & Botanicals'),
+          title: window.t('Палитра гель-лаков и уход', 'Curated Gel Palette & Botanicals'),
           category: window.t('مواد معتمدة', 'PREMIUM MATERIALS'),
           desc: window.t('أكثر من ١٨٠ درجة من أرقى ألوان النيود والألوان الكلاسيكية الآمنة على الأظافر.', 'Over 180 certified HEMA-free nude, blush, and couture shades.'),
           image: window.ASSETS.studioAtm2,
@@ -2691,7 +2698,7 @@
         },
         {
           title: window.t('مساحة خاصة لراحتكِ وجمالكِ', 'Your Personal Sanctuary'),
-          category: window.t('استوديو NAILBELLE', 'NAILBELLE STUDIO'),
+          category: window.t('استوديو ПОЛЮБВИ', 'ПОЛЮБВИ STUDIO'),
           desc: window.t('خصوصية تامة بعيداً عن صخب الصالونات المزدحمة مع ضيافة القهوة المختصة.', 'Unhurried one-on-one appointments away from crowded salon noise.'),
           image: window.ASSETS.studioAtm4,
           serviceId: 'classic-manicure'
@@ -3890,7 +3897,7 @@
       b.bookingRef = '#NB-' + (4100 + Math.floor(Math.random() * 899));
       b.submitted = true;
       try {
-        localStorage.setItem('nailbelle_last_booking', JSON.stringify(b));
+        localStorage.setItem('06-Polubvi-Studio_last_booking_v5', JSON.stringify(b));
       } catch (e) {}
       window.renderCurrentRoute();
       window.showToast(window.t('تم تسجيل حجزكِ بنجاح! رقم الحجز: ' + b.bookingRef, 'Booking confirmed! Reference: ' + b.bookingRef));
@@ -4118,7 +4125,7 @@
                 '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">' +
                   '<div>' +
                     '<label for="bk-name" class="block text-xs font-medium text-[#595251] mb-1">' + window.t('الاسم الكريم', 'Full Name') + ' <span class="text-[#BF8581]">*</span></label>' +
-                    '<input id="bk-name" type="text" value="' + (b.clientName || '').replace(/"/g, '&quot;') + '" oninput="window.syncBookingInputs()" placeholder="' + window.t('مثال: سارة المنصوري', 'e.g., Sarah Al-Mansoori') + '" class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF7F5] border ' + (b.errors.name ? 'border-red-400' : 'border-[#DEC3BC]') + ' text-xs sm:text-sm text-[#292527]" />' +
+                    '<input id="bk-name" type="text" value="' + (b.clientName || '').replace(/"/g, '&quot;') + '" oninput="window.syncBookingInputs()" placeholder="' + window.t('مثال: Анна Смирнова', 'e.g., Sarah Al-Mansoori') + '" class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF7F5] border ' + (b.errors.name ? 'border-red-400' : 'border-[#DEC3BC]') + ' text-xs sm:text-sm text-[#292527]" />' +
                     (b.errors.name ? '<p class="text-[11px] text-red-600 mt-1">' + b.errors.name + '</p>' : '') +
                   '</div>' +
                   '<div>' +
@@ -4440,7 +4447,7 @@
               {
                 img: window.ASSETS.storyClient1,
                 quote: window.t('«أخيراً وجدتُ الخبيرة التي أثق بها على أظافري الطبيعية بنسبة ١٠٠٪!»', '“I finally found the artist I can trust with my natural nails 100%!”'),
-                author: window.t('سارة، عميلة دائمة منذ ٣ سنوات', 'Sarah, Regular Guest')
+                author: window.t('Анна، عميلة دائمة منذ ٣ سنوات', 'Sarah, Regular Guest')
               },
               {
                 img: window.ASSETS.storyClient2,
@@ -4672,7 +4679,7 @@
         return;
       }
       try {
-        localStorage.setItem('nailbelle_newsletter_email', inp.value.trim());
+        localStorage.setItem('полюбви_newsletter_email', inp.value.trim());
       } catch (err) {}
       inp.value = '';
       window.showToast(window.t('شكراً لاشتراككِ! ستصلكِ أحدث نصائح العناية بالأظافر وإطلالات الموسم ♡', 'Thank you for subscribing to the ПОЛЮБВИ Care & Beauty Journal! ♡'));
@@ -4947,7 +4954,7 @@
           '<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">' +
             '<div class="lg:col-span-5 space-y-3.5">' +
               '<p class="text-[10.5px] tracking-[0.2em] uppercase text-[#8A7470] font-semibold">' +
-                window.t('نسعد دائماً باستقبالكِ في استوديو NAILBELLE', 'WE ALWAYS LOOK FORWARD TO WELCOMING YOU') +
+                window.t('نسعد دائماً باستقبالكِ في استوديو ПОЛЮБВИ', 'WE ALWAYS LOOK FORWARD TO WELCOMING YOU') +
               '</p>' +
               '<div>' +
                 '<h1 class="font-serif-editorial text-[46px] sm:text-[56px] leading-none text-[#292527] font-normal">' + window.t('الموقع والتواصل', 'Location & Contacts') + '</h1>' +
